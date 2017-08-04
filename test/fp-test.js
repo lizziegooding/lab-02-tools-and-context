@@ -9,8 +9,8 @@ describe('testing map', () => {
   it('should return [2, 3, 4, 5]', () => {
     expect(fp.map([1, 2, 3, 4], ele => ele + 1)).toEqual([2, 3, 4, 5]);
   });
-  it('should return [\'hi!\', \'bye!\']', () => {
-    expect(fp.map(['hi', 'bye'], ele => ele + '!')).toEqual(['hi!', 'bye!']);
+  it('should throw Error: invalid input', () => {
+    expect(() => fp.map(2, n => n * 2)).toThrow(Error, 'invalid input'); // need a reference instead of actual call as result here
   });
 });
 
